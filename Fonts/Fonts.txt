@@ -1,0 +1,2 @@
+    • Headlines: Montserrat Bold
+    • Body Text: Open Sans or Lato Regular

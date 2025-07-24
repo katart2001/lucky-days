@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Lucky Days</title>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Labour Day Celebrations</h1>
+        <h1 class="hero_set">Start Now!</h1>
+        <p>Give yourself the break you’ve earned—with a chance to win big while you unwind.</p>
+        <div class="video-wrapper">
+        <!-- <video autoplay muted loop playsinline src="video/LP_variantA.mp4"></video> -->
+        <video id="promoVideo" autoplay muted loop playsinline></video>
+        <button class="unmute">Unmute</button>
+        </div>
+    </section>
+
+    <!-- OFFER BLOCKS -->
+     <h2 class="offer_h2">Pick one that suits your style and claim your bonus</h2>
+<section class="offer-blocks">
+    <!-- Lucky Start Pack -->
+    <div class="offer-card">
+      <div class="offer-image" style="background-image: url('img/btn1.png')">
+        <div class="offer-header">
+          <img src="img/lucky-start-icon.png" alt="Lucky Start Pack" class="offer-icon">
+          <span class="offer-title">LUCKY START PACK</span>
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3>GET 95 FREE SPINS</h3>
+        <p class="offer-sub">JUST FOR $1</p>
+        <button class="offer-btn">CLAIM 95 FREE SPINS</button>
+        <ul class="offer-features">
+          <li>No complicated rules</li>
+          <li>Ideal for new players</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Power Pack -->
+    <div class="offer-card">
+      <div class="offer-image" style="background-image: url('img/btn2.png')">
+        <div class="offer-header">
+          <img src="img/power-pack-icon.png" alt="Power Pack" class="offer-icon">
+          <span class="offer-title">Power Pack</span>
+        </div>
+      </div>
+      <div class="offer-content">
+        <h3>100% BONUS UP TO</h3>
+        <p class="offer-sub">$1,500</p>
+        <button class="offer-btn">CLAIM 100% BONUS</button>
+        <ul class="offer-features">
+          <li>Boost your deposit</li>
+          <li>Tailored for high rollers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <section class="payment-methods"></section>
+    <section class="trust-block"></section>
+    <section class="it-blocks"></section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.video-wrapper video');
+    const btn   = document.querySelector('.video-wrapper .unmute');
+
+    // Изначально видео без звука
+    video.muted = true;
+    btn.textContent = 'Unmute';
+
+    btn.addEventListener('click', () => {
+      // Переключаем состояние
+      video.muted = !video.muted;
+      // Обновляем текст кнопки
+      btn.textContent = video.muted ? 'Unmute' : 'Mute';
+    });
+  });
+  const params = new URLSearchParams(location.search);
+        const variant = params.get('variant');
+        const videoEl = document.getElementById('promoVideo');
+        if (variant === 'B') {
+            videoEl.src = 'video/LP_variantB.mp4';
+        } else {
+            videoEl.src = 'video/LP_variantA.mp4';
+        }
+</script>
+</body>
+</html>

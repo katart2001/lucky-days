@@ -1,0 +1,165 @@
+/* Сброс и базовые шрифты */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #0F172A url('../img/bg.jpeg') center/cover no-repeat;
+  color: #FFF;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2rem,5vw,3rem);
+  margin-bottom: 0.5rem;
+}
+.hero_set {
+  font-size: clamp(1.5rem,4vw,2rem);
+  color: red;
+  margin-bottom: 1rem;
+}
+.hero p {
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+.video-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.video-wrapper video {
+  width: 100%;
+  border-radius: 8px;
+}
+.video-wrapper .unmute {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.5);
+  color: #FFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* OFFER BLOCKS */
+
+.offer_h2{
+    text-align: center;
+}
+
+/* OFFER BLOCKS */
+.offer-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* Каждый оффер */
+.offer-card {
+  flex: 1 1 300px;         /* занимает минимум 300px, но растягивается */
+  max-width: 320px;        /* не будет шире 320px */
+  background: rgba(0,0,0,0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Фоновая картинка + белая шапка сверху */
+.offer-image {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;      /* соотношение 16:9 */
+  background-size: cover;
+  background-position: center;
+}
+.offer-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: #FFF;         /* белый фон */
+  padding: 0.5rem 1rem;
+  border-bottom-right-radius: 12px; /* скругление справа */
+}
+.offer-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+.offer-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #000;
+}
+
+/* Контент оффера */
+.offer-content {
+  padding: 1rem;
+  text-align: center;
+  flex: 1;
+}
+.offer-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+.offer-sub {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.offer-btn {
+  display: block;
+  width: 100%;
+  background: #FF6B35;
+  color: #FFF;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.offer-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.offer-features li {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.offer-features li::before {
+  content: '★';
+  color: #FFD700;
+  margin-right: 0.5rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .offer-card {
+    flex: 1 1 80%;     /* минимально 80% ширины */
+    max-width: 80%;     /* не растягиваться больше */
+    margin: 0 auto;     /* центрировать */
+  }
+}
+
+ .offer-btn {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .offer-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.5);
+    }
