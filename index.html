@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucky Days – Labour Day Promo</title>
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Google Fonts: Montserrat & Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Hero Section: headline, subheadline, description, video, CTAs -->
+  <section class="hero">
+    <h1>Celebrate Labour Day with Insane Bonuses!</h1>
+    <p>
+      This Labour Day, give yourself the break you’ve earned—
+      with a chance to win big while you unwind.
+    </p>
+
+    <!-- Video Embed -->
+    <div class="video-wrapper">
+      <video id="promoVideo" autoplay muted loop playsinline></video>
+      <button class="unmute">Unmute</button>
+    </div>
+
+    <div class="after-video-text">
+      🎉 Celebrate Labour Day in style! 🎰 Grab 95 Free Spins for just $1 or claim a 💰 100% deposit bonus up to $1,500 at Lucky Days. ⚡ Fast withdrawals, 🎮 2,300+ games, and 🎁 daily rewards. 📍 Ontario licensed.
+    </div>
+  </section>
+
+  <!-- Offer Section: two bonus packs -->
+  <section class="offer">
+    <h2 class="offer-heading">Choose your pack and play instantly</h2>
+    <div class="offer-blocks">
+
+      <!-- Lucky Start Pack Card -->
+      <div class="offer-card">
+        <div class="offer-image" style="background-image: url('img/btn1.png');">
+        </div>
+        <div class="offer-content">
+          <button class="offer-btn">Claim 95 Free Spins</button>
+          <ul class="offer-features">
+            <li>
+                ONE PER CUSTOMER<br>
+                MIN $1 DEPOSIT<br>
+                0X WAGERING<br>
+                30 DAYS EXPIRY<br>
+                SPINS EXPIRE AFTER 30 DAYS
+            </li>
+          </ul>
+        </div>
+      </div>
+
+       <div class="offer-divider">OR</div>
+       
+      <!-- Power Pack Card -->
+      <div class="offer-card">
+        <div class="offer-image" style="background-image: url('img/btn2.png');">
+        </div>
+        <div class="offer-content">
+          <button class="offer-btn">Claim 100% Bonus</button>
+          <ul class="offer-features">
+            <li>
+              ONE PER CUSTOMER<br>
+              MIN $1 DEPOSIT<br>
+              30X WAGERING<br>
+              $5 MAX BET<br>
+              30 DAYS EXPIRY
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section class="steps">
+    <div class="step">
+      <div class="circle">1</div>
+      <div class="step-text">
+        <h3>Sign Up</h3>
+        <p>Create your account with LuckyDays</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="circle">2</div>
+      <div class="step-text">
+        <h3>Deposit</h3>
+        <p>Head to our cashier to make your first deposit</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="circle">3</div>
+      <div class="step-text">
+        <h3>Choose Bonus</h3>
+        <p>Choose one from two Welcome Offers in the Cashier</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="payment-methods"></section>
+  <section class="trust-block"></section>
+  <section class="it-blocks"></section>
+  <!-- Video Control Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('promoVideo');
+      const btn = document.querySelector('.unmute');
+      const variant = new URLSearchParams(window.location.search).get('variant');
+
+      video.src = variant === 'B'
+        ? 'video/LP_variantB.mp4'
+        : 'video/LP_variantA.mp4';
+
+      btn.textContent = 'Unmute';
+      btn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        btn.textContent = video.muted ? 'Unmute' : 'Mute';
+      });
+    });
+  </script>
+</body>
+</html>
